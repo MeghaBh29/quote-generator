@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Random Quote</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+  }
+  #quote {
+    font-size: 1.5em;
+    max-width: 600px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1em;
+    border: none;
+    border-radius: 4px;
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+  }
+  button:hover {
+    background-color: #0056b3;
+  }
+</style>
+</head>
+<body>
+  <div id="quote">Loading random quote...</div>
+  <button onclick="generateQuote()">New Quote</button>
+
+<script>
+  const quotes = [
+    "The best way to get started is to quit talking and begin doing. - Walt Disney",
+    "Don't let yesterday take up too much of today. - Will Rogers",
+    "It's not whether you get knocked down, it's whether you get up. - Vince Lombardi",
+    "If you are working on something exciting, it will keep you motivated. - Amelia Earhart",
+    "Success is not in what you have, but who you are. - Bo Bennett",
+    "The harder you work for something, the greater you'll feel when you achieve it.",
+    "Dream bigger. Do bigger.",
+    "Don't watch the clock; do what it does. Keep going."
+  ];
+
+  function generateQuote() {
+    const randomIndex = Math.floor(Math.random() * quotes.length);
+    document.getElementById('quote').textContent = quotes[randomIndex];
+  }
+
+  // Generate initial quote on page load
+  window.onload = generateQuote;
+</script>
+</body>
+</html>
