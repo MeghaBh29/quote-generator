@@ -97,7 +97,11 @@ Respond with a JSON object containing:
     return res.status(500).json({ error: "Internal server error" });
   }
 });
+app.get("/", (req, res) => {
+  res.send("✅ LLM Code Deploy API is running.");
+});
 
 app.listen(PORT, () => {
   console.log(`🚀 Server running at http://localhost:${PORT}`);
 });
+
